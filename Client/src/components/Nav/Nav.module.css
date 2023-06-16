@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  margin-top: 250px;
+  top: 10px;
+  z-index: 100;
+}
+
+.random {
+  font-family: "RickAndMorty";
+  font-size: large;
+  font-weight: bold;
+  margin-left: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #74c82c;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    background-color: #32893b;
+    color: #74c82c;
+  }
+}

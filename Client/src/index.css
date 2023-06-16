@@ -1,0 +1,18 @@
+@font-face {
+  font-family: 'RickAndMorty';
+  src: url('./assets/get_schwifty.ttf');
+}
+
+body {
+  font-family: 'RickAndMorty';
+  background-image: url('./assets/fondo.jpg');
+  background-size: 1980px;
+  background-position: top;
+  background-attachment: fixed;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+

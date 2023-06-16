@@ -1,0 +1,25 @@
+.container {
+  & button {
+    font-family: "RickAndMorty";
+    font-size: large;
+    font-weight: bold;
+    margin-left: -85px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #74c82c;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      background-color: #32893b;
+      color: #74c82c;
+    }
+  }
+  & input {
+    font-family: "RickAndMorty";
+    font-size: large;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    background: #87c2e77a;
+  }
+}

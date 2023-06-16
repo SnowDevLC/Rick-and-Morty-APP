@@ -1,0 +1,62 @@
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  & h2 {
+    margin: 0;
+  }
+  & button {
+    font-family: 'RickAndMorty';
+    font-size: large;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffe93d;
+    color: red;
+    &:hover {
+      cursor: pointer;
+      background-color: red;
+      color: #ffe93d;
+    }
+  }
+}
+
+/* .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.8s;
+  box-shadow: 0 5px 10px black;
+} */
+
+/* .front {
+  cursor: default;
+  & img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  & h2 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    color: #ffe93d;
+    font-size: xx-large;
+    background: rgba(0, 0, 0, 0.4);
+    text-align: center;
+  }
+} */
+
+.link {
+  text-decoration: none;
+  &:visited, &:link, &:active {
+    color: inherit;
+  }
+}

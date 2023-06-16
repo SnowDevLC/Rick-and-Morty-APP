@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  margin-top: 300px;
+  & label {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  & input {
+    padding: 10px 50px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  & button {
+    margin-top: 20px;
+    font-family: "RickAndMorty";
+    font-size: large;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #74c82c;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      background-color: #32893b;
+      color: #74c82c;
+    }
+    &:disabled {
+      opacity: 0.5;
+      cursor:no-drop;
+    }
+  }
+  
+}
+
+.warning {
+    border: solid red 1px;
+    border-radius: 0.2em;
+  }
+
+.danger {
+    font-size: 15px;
+    color: red;
+}
+
+.warningb {
+    margin-top: 20px;
+    font-family: "RickAndMorty";
+    font-size: large;
+    font-weight: bold;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: red;
+    color: white;
+    &:hover {
+      cursor: pointer;
+      background-color: red;
+      color: red;
+    }
+}
+
+
+
