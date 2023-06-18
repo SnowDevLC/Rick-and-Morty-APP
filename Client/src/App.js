@@ -1,10 +1,11 @@
-import {Nav, Cards} from "./components";
-import {About, Detail, Favorites, Error, Form} from "./views"
+import { Nav, Cards } from "./components";
+import { About, Detail, Favorites, Error, Form } from "./views";
 import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeFav } from "./redux/actions.js";
-import { EMAIL, PASSWORD, URL_BASE } from "./utils/consts";
+import { URL_BASE } from "./utils/consts";
+import axios from "axios";
 
 function App() {
   const location = useLocation();
@@ -12,12 +13,14 @@ function App() {
   const dispatch = useDispatch();
   const [access, setAccess] = useState(false);
   const [characters, setCharacters] = useState([]);
-  
+
   const login = (userData) => {
-    if (userData.password === PASSWORD && userData.email === EMAIL) {
-      setAccess(true);
-      navigate("/home");
-    }
+    const { email, password } = userData;
+    axios(`${URL_BASE}/login/?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      setAccess(access);
+      access && navigate("/home");
+    });
   };
 
   const logout = () => {
@@ -55,7 +58,9 @@ function App() {
 
   return (
     <div className="App">
-      {location.pathname !== "/" && <Nav onSearch={searchHandler} onLogout={logout} />}
+      {location.pathname !== "/" && (
+        <Nav onSearch={searchHandler} onLogout={logout} />
+      )}
       <Routes>
         <Route path="/" element={<Form onLogin={login} />} />
         <Route
@@ -64,7 +69,10 @@ function App() {
         />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
-        <Route path="/favorites" element={<Favorites onClose={closeHandler}/>} />
+        <Route
+          path="/favorites"
+          element={<Favorites onClose={closeHandler} />}
+        />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
