@@ -15,8 +15,13 @@ export default function SearchBar({ onSearch }) {
 
   return (
     <div className={style.container}>
-      <input type="search" value={id} onChange={handleChange} />
-      <button onClick={addHandle}>Agregar</button>
+      <input 
+        type="search" 
+        value={id} 
+        onChange={handleChange} 
+        placeholder="Search Character by ID"  
+      />
+      <button onClick={addHandle}>ADD</button>
     </div>
   );
 }

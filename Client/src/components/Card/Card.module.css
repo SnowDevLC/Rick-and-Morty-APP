@@ -1,60 +1,72 @@
 .card {
   position: relative;
-  width: 300px;
-  height: 300px;
-  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px black;
   & h2 {
     margin: 0;
   }
-  & button {
-    font-family: 'RickAndMorty';
-    font-size: large;
-    font-weight: bold;
-    padding: 10px;
+  & img {
     border-radius: 10px;
-    background-color: #ffe93d;
-    color: red;
-    &:hover {
-      cursor: pointer;
-      background-color: red;
-      color: #ffe93d;
-    }
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  &:hover button {
+    opacity: 1;
   }
 }
 
-/* .front {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: 0.8s;
-  box-shadow: 0 5px 10px black;
-} */
-
-/* .front {
-  cursor: default;
-  & img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  & h2 {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    line-height: 60px;
+button {
+  font-family: 'RickAndMorty';
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffe93d;
+  color: red;
+  &:hover {
+    cursor: pointer;
+    background-color: red;
     color: #ffe93d;
-    font-size: xx-large;
-    background: rgba(0, 0, 0, 0.4);
-    text-align: center;
   }
-} */
+  
+}
+
+.fav {
+  position: absolute;
+  top: 2%;
+  left: 2%;
+  /* transform: translate(-50%, -50%); */
+  /* border: none; */
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.delete {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  /* transform: translate(-50%, -50%); */
+  /* border: none; */
+  z-index: 1;
+  padding-left: 17px;
+  padding-right: 17px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
 .link {
+  background-color: aliceblue;
+  position: absolute;
+  bottom: 2%;
+  left: 2%;
+  /* transform: translate(-50%, -50%); */
+  /* border: none; */
+  z-index: 1;
+  & h2{
+    color: #74c82c;
+  }
   text-decoration: none;
   &:visited, &:link, &:active {
     color: inherit;

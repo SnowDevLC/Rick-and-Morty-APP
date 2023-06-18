@@ -1,11 +1,12 @@
 import { Nav, Cards } from "./components";
 import { About, Detail, Favorites, Error, Form } from "./views";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeFav } from "./redux/actions.js";
 import { URL_BASE } from "./utils/consts";
 import axios from "axios";
+import './App.css';
 
 function App() {
   const location = useLocation();
@@ -56,8 +57,53 @@ function App() {
     dispatch(removeFav(id));
   };
 
+  const trackerRef = useRef(null);
+  const trackerSize = useRef(0);
+  const trackerX = useRef(0);
+  const trackerY = useRef(0);
+  const mouseX = useRef(0);
+  const mouseY = useRef(0);
+  const speed = 0.05;
+  let isVisible = useRef(false);
+
+
+  useEffect(() => {
+    const tracker = trackerRef.current;
+    trackerSize.current = tracker.offsetWidth;
+
+    const handleMouseMove = (e) => {
+      if (!isVisible.current) {
+        isVisible.current = true;
+        tracker.style.opacity = 1;
+        updatePosition();
+      }
+      mouseX.current = e.clientX;
+      mouseY.current = e.clientY;
+    };
+
+
+    const updatePosition = () => {
+      const distanceX = mouseX.current - (trackerX.current + trackerSize.current / 2);
+      const distanceY = mouseY.current - (trackerY.current + trackerSize.current / 2);
+      const offsetX = 5;
+      trackerX.current += (distanceX * speed) + offsetX;
+      trackerY.current += distanceY * speed;
+
+      tracker.style.transform = `translate(${trackerX.current}px, ${trackerY.current}px)`;
+
+      requestAnimationFrame(updatePosition);
+    };
+
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
+
   return (
     <div className="App">
+    <div className="nave" ref={trackerRef}></div>
       {location.pathname !== "/" && (
         <Nav onSearch={searchHandler} onLogout={logout} />
       )}

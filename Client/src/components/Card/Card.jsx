@@ -35,20 +35,16 @@ export default function Card({ props, onClose }) {
 
   return (
     <div className={style.card}>
-      <div className={style.front}>
         {isFav ? (
-          <button onClick={handleFavorite}>❤️</button>
+          <button className={style.fav} onClick={handleFavorite}>❤️</button>
         ) : (
-          <button onClick={handleFavorite}>🤍</button>
+          <button className={style.fav} onClick={handleFavorite}>🤍</button>
         )}
         <img src={props.image} alt="" />
-        <h2>{props.name}</h2>
-        <button onClick={closeHandle}>Quitar Carta</button>
+        <button className={style.delete} onClick={closeHandle}>X</button>
         <Link to={`/detail/${props.id}`} className={style.link}>
-          <h2>MAS INFO</h2>
+          <h2>{props.name}</h2>
         </Link>
-        
-      </div>
     </div>
   );
 }
