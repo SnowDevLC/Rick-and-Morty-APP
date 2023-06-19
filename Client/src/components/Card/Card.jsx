@@ -36,11 +36,11 @@ export default function Card({ props, onClose }) {
   return (
     <div className={style.card}>
         {isFav ? (
-          <button className={style.fav} onClick={handleFavorite}>❤️</button>
+          <button className={`${style.fav} ${isFav ? style['fav-active'] : ''}`} onClick={handleFavorite}>❤️</button>
         ) : (
           <button className={style.fav} onClick={handleFavorite}>🤍</button>
         )}
-        <img src={props.image} alt="" />
+        <img src={props.image} alt={props.name} />
         <button className={style.delete} onClick={closeHandle}>X</button>
         <Link to={`/detail/${props.id}`} className={style.link}>
           <h2>{props.name}</h2>

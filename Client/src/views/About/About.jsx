@@ -1,9 +1,9 @@
 import styles from "./About.module.css";
-import htmlImg from "../../assets/html.png";
-import cssImg from "../../assets/css.svg";
-import javascriptImg from "../../assets/javascript.png";
-import reactImg from "../../assets/react.png";
-import redux from "../../assets/redux.png";
+import htmlImg from "../../assets/forAbout/html.png";
+import cssImg from "../../assets/forAbout/css.svg";
+import javascriptImg from "../../assets/forAbout/javascript.png";
+import reactImg from "../../assets/forAbout/react.png";
+import redux from "../../assets/forAbout/redux.png";
 
 export default function About() {
   const techSkills = [

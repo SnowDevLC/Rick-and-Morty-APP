@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'RickAndMorty';
-  src: url('./assets/PermanentMarker.ttf');
+  src: url('./assets/fonts/PermanentMarker.ttf');
 }
 
 body {
   font-family: 'RickAndMorty';
-  background-image: url('./assets/fondo.jpg');
+  background-image: url('./assets/wallpapers/fondo1.jpg');
   background-size: 1980px;
   background-position: top;
   background-attachment: fixed;

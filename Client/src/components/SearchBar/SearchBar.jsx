@@ -19,7 +19,7 @@ export default function SearchBar({ onSearch }) {
         type="search" 
         value={id} 
         onChange={handleChange} 
-        placeholder="Search Character by ID"  
+        placeholder="Character ID"  
       />
       <button onClick={addHandle}>ADD</button>
     </div>

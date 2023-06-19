@@ -1,26 +1,33 @@
 .container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   position: sticky;
-  margin-top: 250px;
+  margin-top: 10px;
   top: 10px;
   z-index: 100;
 }
 
 .random {
+  border: solid 3px black;
   font-family: "RickAndMorty";
   font-size: large;
   font-weight: bold;
   margin-left: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #74c82c;
-  color: white;
+  background-color: #12B0C9;
+  color: #C8DD5D;
   &:hover {
     cursor: pointer;
-    background-color: #32893b;
-    color: #74c82c;
+    background-color: #055ADA;
   }
+}
+
+.add {
+  display: flex;
+}
+
+.image img {
+  width: 350px;
 }

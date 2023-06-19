@@ -6,20 +6,26 @@
     margin-left: 10px;
     padding: 10px;
     border-radius: 10px;
-    background-color: #74c82c;
-    color: white;
+    border: solid 3px black;
+    background-color: #12B0C9;
+    color: #C8DD5D;
     &:hover {
       cursor: pointer;
-      background-color: #32893b;
-      color: #74c82c;
+      background-color: #055ADA;
+      
     }
   }
   & input {
     font-family: "RickAndMorty";
     font-size: large;
     font-weight: bold;
-    padding: 15px;
+    text-align: center;
+    border: solid 3px black;
+    padding: 10px;
     border-radius: 10px;
     background: #87c2e77a;
+    &::placeholder{
+      color: rgba(0, 0, 0, 0.514)
+    }
   }
 }
