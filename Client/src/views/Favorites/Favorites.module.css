@@ -1,0 +1,42 @@
+.container {
+  background-color: #c5c5c5a2;
+  border-radius: 40px;
+  margin-top: 50px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 3em;
+  text-align: center;
+  margin-top: 1em;
+  color: rgb(26, 26, 130);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.filters {
+  position: sticky;
+  top: 120px;
+  width: 15%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  & select {
+    margin: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+  }
+}
+
+.cards {
+    border: solid 1px black;
+    margin-top: -40px;
+  width: 80%;
+}

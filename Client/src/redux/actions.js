@@ -9,24 +9,31 @@ export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 
 export const addFav = (character) => {
-   return (dispatch) => {
-      axios.post(`${URL_BASE}/fav`, character).then(({ data }) => {
+   return async (dispatch) => {
+      try {
+         const { data } = await axios.post(`${URL_BASE}/fav`, character);
          return dispatch({
-            type: 'ADD_FAV',
+            type: ADD_FAV,
             payload: data,
          });
-      });
+      } catch (error) {
+         console.error('Error en addFav:', error);
+      }
    };
 };
 
 export const removeFav = (id) => {
-   return (dispatch) => {
-      axios.delete(`${URL_BASE}/fav/${id}`).then(({ data }) => {
-         return dispatch({
-            type: 'REMOVE_FAV',
-            payload: data,
-      });
-      });
+   return async (dispatch) => {
+      try{
+         const { data } = await axios.delete(`${URL_BASE}/fav/${id}`);
+         console.log("remove fav - data: ", data);
+            return dispatch({
+               type: REMOVE_FAV,
+               payload: data,
+         });
+      } catch (error) {
+         console.error('Error en removeFav:', error);
+      }
    };
 };
 

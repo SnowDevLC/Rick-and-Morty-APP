@@ -1,9 +1,8 @@
-import Card from '../Card/Card';
-import style from './Cards.module.css'
+import Card from "../Card/Card";
+import style from "./Cards.module.css";
 import React, { useEffect, useRef } from "react";
 
-export default function Cards({characters, onClose}) {
-
+export default function Cards({ characters, onClose }) {
   const trackerRef = useRef(null);
   const trackerSize = useRef(0);
   const trackerX = useRef(0);
@@ -28,30 +27,48 @@ export default function Cards({characters, onClose}) {
     };
 
     const updatePosition = () => {
-      const distanceX = mouseX.current - (trackerX.current + trackerSize.current / 2);
-      const distanceY = mouseY.current - (trackerY.current + trackerSize.current / 2);
+      const distanceX =
+        mouseX.current - (trackerX.current + trackerSize.current / 2);
+      const distanceY =
+        mouseY.current - (trackerY.current + trackerSize.current / 2);
 
-      trackerX.current += (distanceX * speed) + (-5);
-      trackerY.current += (distanceY * speed) + 3;
+      trackerX.current += distanceX * speed + -5;
+      trackerY.current += distanceY * speed + 3;
 
       tracker.style.transform = `translate(${trackerX.current}px, ${trackerY.current}px)`;
 
       requestAnimationFrame(updatePosition);
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
-   return (
-      <div className={style.container}>
-        <div className={style.nave} ref={trackerRef}></div>
-        {characters?.map((personaje) => (
-          <Card className={style.card} key={personaje.id} props={personaje} onClose={onClose} />
-        ))}
-      </div>
-    );
+  // const containerRef = useRef(null);
+
+  // useEffect(() => {
+  //   const container = containerRef.current;
+  //   if (container && characters.length > 4) {
+  //     container.classList.add(style.centered);
+  //   } else {
+  //     container.classList.remove(style.centered);
+  //   }
+  // }, [characters]);
+
+  return (
+    <div className={style.container} /*ref={containerRef}*/>
+      <div className={style.nave} ref={trackerRef}></div>
+      {characters?.map((personaje) => (
+        <Card
+          className={style.card}
+          key={personaje.id}
+          props={personaje}
+          onClose={onClose}
+        />
+      ))}
+    </div>
+  );
 }

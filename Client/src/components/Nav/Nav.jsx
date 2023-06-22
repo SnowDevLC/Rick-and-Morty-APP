@@ -1,12 +1,12 @@
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import style from "./Nav.module.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import imageLogo from "../../assets/logo.png";
 
 export default function Nav({ onSearch, onLogout }) {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleLogout = () => {
     onLogout();
@@ -36,12 +36,14 @@ export default function Nav({ onSearch, onLogout }) {
       <div className={style.image}>
         <img src={imageLogo} alt="logo" />
       </div>
-      <div className={style.add}>
-        <SearchBar onSearch={onSearch} />
-        <button className={style.random} onClick={addR}>
-          Add Random
-        </button>
-      </div>
+      {location.pathname === "/home" && (
+        <div className={style.add}>
+          <SearchBar onSearch={onSearch} />
+          <button className={style.random} onClick={addR}>
+            ADD RANDOM
+          </button>
+        </div> 
+      )}
     </div>
   );
 }

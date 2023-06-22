@@ -11,6 +11,12 @@
   gap: 50px;
 }
 
+/* .container.centered {
+  justify-content: center;
+}
+@media (min-width: 600px) {
+  
+} */
 
 .nave {
   background-image: url("../../assets/nave.png");
