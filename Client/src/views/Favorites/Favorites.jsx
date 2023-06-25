@@ -22,22 +22,24 @@ export default function Favorites({ onClose }) {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Favorites</h1>
       <div className={styles.content}>
         <aside className={styles.filters}>
-          <select onChange={handleOrder}>
-            <option value="A">Ascendente</option>
-            <option value="D">Descendente</option>
-          </select>
-          <select onChange={handleFilter}>
-            <option value="All">All Characters</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Genderless">Genderless</option>
-            <option value="unknown">unknown</option>
-          </select>
+          <div className={styles.selects}>
+            <select onChange={handleOrder}>
+              <option value="A">Ascendente</option>
+              <option value="D">Descendente</option>
+            </select>
+            <select onChange={handleFilter}>
+              <option value="All">All Characters</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Genderless">Genderless</option>
+              <option value="unknown">unknown</option>
+            </select>
+          </div>
         </aside>
         <div className={styles.cards}>
+          <h1 className={styles.title}>Favorites</h1>
           <Cards characters={myFavorites} onClose={onClose} />
         </div>
       </div>

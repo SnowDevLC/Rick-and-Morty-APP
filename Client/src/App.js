@@ -56,7 +56,6 @@ function App() {
     }
   }, [access, navigate]);
   
-
   const searchHandler = async (id) => {
     try {
       if (characters.some((character) => character.id === id)) {

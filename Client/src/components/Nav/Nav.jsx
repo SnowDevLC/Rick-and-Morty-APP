@@ -19,10 +19,8 @@ export default function Nav({ onSearch, onLogout }) {
 
   return (
     <div className={style.container}>
-      <div className={style.buttonsNav}>
-        <button className={style.random} onClick={handleLogout}>
-          LOG OUT
-        </button>
+      <div className={style.buttons}>
+        <button className={style.random} onClick={handleLogout}>LOG OUT</button>
         <Link to="/about">
           <button className={style.random}>ABOUT</button>
         </Link>
@@ -33,17 +31,16 @@ export default function Nav({ onSearch, onLogout }) {
           <button className={style.random}>FAVORITES</button>
         </Link>
       </div>
-      <div className={style.image}>
-        <img src={imageLogo} alt="logo" />
-      </div>
       {location.pathname === "/home" && (
         <div className={style.add}>
           <SearchBar onSearch={onSearch} />
-          <button className={style.random} onClick={addR}>
-            ADD RANDOM
-          </button>
+          <button className={style.random} onClick={addR}>ADD RANDOM</button>
         </div> 
       )}
+      <div className={style.image}>
+        <img src={imageLogo} alt="logo" />
+      </div>
+      
     </div>
   );
 }

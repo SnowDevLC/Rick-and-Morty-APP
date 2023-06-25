@@ -2,7 +2,7 @@
   background-color: #c8dd5d;
   position: relative;
   border-radius: 10px;
-  outline: 3px solid black;
+  outline: 4px solid black;
   box-shadow: 0 20px 30px black;
   & h2 {
     margin: 0;
@@ -17,6 +17,15 @@
   }
   &:hover button {
     opacity: 1;
+  }
+}
+
+.cardFav {
+  background-color: #12B0C9;
+  & .link {
+    & h2{
+      color: #c8dd5d;
+    }
   }
 }
 
@@ -49,11 +58,9 @@ button {
   }
 }
 
-.fav-active {
+.favActive {
   opacity: 1;
-  &:hover{
-    background-color: red;
-  }
+
 }
 
 .delete {
@@ -71,7 +78,7 @@ button {
   text-align: center;
   & h2{  
     color: #12B0C9;
-    margin: 10px;
+    padding: 10px;
   }
   text-decoration: none;
   &:visited, &:link, &:active {

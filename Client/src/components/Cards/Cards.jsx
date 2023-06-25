@@ -47,19 +47,8 @@ export default function Cards({ characters, onClose }) {
     };
   }, []);
 
-  // const containerRef = useRef(null);
-
-  // useEffect(() => {
-  //   const container = containerRef.current;
-  //   if (container && characters.length > 4) {
-  //     container.classList.add(style.centered);
-  //   } else {
-  //     container.classList.remove(style.centered);
-  //   }
-  // }, [characters]);
-
   return (
-    <div className={style.container} /*ref={containerRef}*/>
+    <div className={style.container}>
       <div className={style.nave} ref={trackerRef}></div>
       {characters?.map((personaje) => (
         <Card

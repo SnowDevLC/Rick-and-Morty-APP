@@ -34,15 +34,15 @@ export default function Card({ props, onClose }) {
  }, [myFavorites, props.id]);
 
   return (
-    <div className={style.card}>
+    <div className={`${style.card} ${isFav ? style.cardFav : ''}`}>
         {isFav ? (
-          <button className={`${style.fav} ${isFav ? style['fav-active'] : ''}`} onClick={handleFavorite}>❤️</button>
+          <button className={`${style.fav} ${isFav ? style.favActive : ''}`} onClick={handleFavorite}>❤️</button>
         ) : (
           <button className={style.fav} onClick={handleFavorite}>🤍</button>
         )}
-        <img src={props.image} alt={props.name} />
         <button className={style.delete} onClick={closeHandle}>X</button>
         <Link to={`/detail/${props.id}`} className={style.link}>
+          <img src={props.image} alt={props.name} />
           <h2>{props.name}</h2>
         </Link>
     </div>

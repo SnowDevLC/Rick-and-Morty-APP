@@ -44,6 +44,7 @@
     align-content: center;
     justify-content: center;
     & img {
+        outline: 4px solid black;
         width: 350px;
         height: 350px;
         border-radius: 20px;

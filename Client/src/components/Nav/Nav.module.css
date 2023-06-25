@@ -16,11 +16,11 @@
   margin-left: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: #12B0C9;
-  color: #C8DD5D;
+  background-color: #12b0c9;
+  color: #c8dd5d;
   &:hover {
     cursor: pointer;
-    background-color: #055ADA;
+    background-color: #055ada;
   }
 }
 
