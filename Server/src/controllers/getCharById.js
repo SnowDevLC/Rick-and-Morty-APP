@@ -12,17 +12,14 @@ const getCharById = async (req, res) => {
         name: data.name,
         gender: data.gender,
         species: data.species,
-        origin: {
-          name: data.origin?.name,
-          url: data.origin?.url
-        },
+        origin: data.origin?.name,
         image: data?.image,
         status: data.status,
       };
       return res.status(200).json(character);
     }
   } catch (err) {
-    return res.status(500).send(err.message);
+    return res.status(500).json({err: err.message});
   }
 };
 
